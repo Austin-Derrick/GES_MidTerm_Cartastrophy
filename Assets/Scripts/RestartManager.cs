@@ -25,7 +25,8 @@ public class RestartManager : MonoBehaviour
 
     void RestartLevel()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Prototype 1");
+        Time.timeScale = 1;
     }
     
     
