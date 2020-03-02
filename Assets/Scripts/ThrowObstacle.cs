@@ -14,23 +14,18 @@ public class ThrowObstacle : MonoBehaviour
         InvokeRepeating("InstatiateObstacle", 0, 3);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void InstatiateObstacle()
     {
         Quaternion spawnRotation = obstaclePrefab.transform.rotation;
         Vector3 spawnPos = transform.position;
         spawnPos.y += 5.0f;
-        spawnRotation.y += 45;
-        Instantiate(obstaclePrefab, spawnPos, obstaclePrefab.transform.rotation);
+        spawnRotation.y += 90;
+        Instantiate(obstaclePrefab, spawnPos, spawnRotation);
         throwObject();
     }
     private void throwObject()
     {
-        obstacleRb.AddForce(Vector3.back * throwForce, ForceMode.Impulse);
+        obstacleRb.AddForce(Vector3.back * throwForce * Time.deltaTime, ForceMode.Impulse);
+        obstacleRb.AddTorque(180 * 50 * Time.deltaTime, 0, 0, ForceMode.Impulse);
     }
 }
