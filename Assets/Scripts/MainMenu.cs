@@ -7,9 +7,14 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] GameObject mainMenu;
     [SerializeField] GameObject creditsMenu;
+    private void Start()
+    {
+        Time.timeScale = 0;
+    }
     public void StartGame()
     {
-        SceneManager.LoadScene("FinishedPrototype_01");
+        Time.timeScale = 1;
+        mainMenu.SetActive(false);
     }
     public void ShowCredits()
     {
