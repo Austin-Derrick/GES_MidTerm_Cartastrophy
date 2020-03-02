@@ -11,7 +11,7 @@ public class ThrowObstacle : MonoBehaviour
     void Start()
     {
         obstacleRb = obstaclePrefab.GetComponent<Rigidbody>();
-        InvokeRepeating("InstatiateObstacle", 0, 3);
+        InvokeRepeating("InstatiateObstacle", 0.5f, 3);
     }
 
     private void InstatiateObstacle()
