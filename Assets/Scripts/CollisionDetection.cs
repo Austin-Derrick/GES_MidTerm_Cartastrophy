@@ -5,26 +5,25 @@ using UnityEngine;
 public class CollisionDetection : MonoBehaviour
 {
     private int health = 3;
+    LivesManager livesManager;
     // Start is called before the first frame update
     void Start()
     {
-        
+        livesManager = GetComponent<LivesManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (health <= 0)
-        {
-            Debug.Log("You Lost!");
-        }
+
     }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Obstacle"))
         {
-            health--;
             Destroy(collision.gameObject);
+            livesManager.UpdateText();
         }
     }
 }
