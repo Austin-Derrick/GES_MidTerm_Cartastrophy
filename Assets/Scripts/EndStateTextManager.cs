@@ -17,7 +17,7 @@ public class EndStateTextManager : MonoBehaviour
     {
         endStateText.text = $"Game Over\nTime: {Mathf.RoundToInt( timerManager.time)}";
         showButton();
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
     }
     private void showButton()
     {

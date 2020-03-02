@@ -13,21 +13,14 @@ public class RestartManager : MonoBehaviour
         restartButton.gameObject.SetActive(false);
     }
 
-    private void Update()
-    {
-        restartButton.onClick.AddListener(RestartLevel);
-    }
-
     public void setButtonActive()
     {
         restartButton.gameObject.SetActive(true);
     }
 
-    void RestartLevel()
+    public void RestartLevel()
     {
-        SceneManager.LoadScene("Prototype 1");
-        Time.timeScale = 1;
+        //Time.timeScale = 1.0f;
+        SceneManager.LoadScene("FinishedPrototype_01");
     }
-    
-    
 }
