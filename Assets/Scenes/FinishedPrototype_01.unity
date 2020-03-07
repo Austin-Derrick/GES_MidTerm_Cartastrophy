@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.574817, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -345,6 +345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endStateText: {fileID: 1200695790}
+  endStateMenu: {fileID: 0}
 --- !u!114 &40583559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1263,7 +1264,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 4e-45}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -2835,6 +2836,35 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7709566456709355085, guid: e2955198a77e9304480100870bc2656a,
+        type: 3}
+      propertyPath: obstacleArray.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7709566456709355085, guid: e2955198a77e9304480100870bc2656a,
+        type: 3}
+      propertyPath: obstacleArray.Array.data[0]
+      value: 
+      objectReference: {fileID: 4719061226490127976, guid: 1a906bd68dc532d47b1ef0bc7bcba2fd,
+        type: 3}
+    - target: {fileID: 7709566456709355085, guid: e2955198a77e9304480100870bc2656a,
+        type: 3}
+      propertyPath: obstacleArray.Array.data[1]
+      value: 
+      objectReference: {fileID: 3191437023696792357, guid: ad4916620bd7eeb4a8b92836475d7171,
+        type: 3}
+    - target: {fileID: 7709566456709355085, guid: e2955198a77e9304480100870bc2656a,
+        type: 3}
+      propertyPath: obstacleArray.Array.data[2]
+      value: 
+      objectReference: {fileID: 1180832292187198215, guid: b2e710d0d489720439e22a0262fce204,
+        type: 3}
+    - target: {fileID: 7709566456709355085, guid: e2955198a77e9304480100870bc2656a,
+        type: 3}
+      propertyPath: obstacleArray.Array.data[3]
+      value: 
+      objectReference: {fileID: 6432772900125525979, guid: e9b3553326489934fa20c8d8053173dd,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2955198a77e9304480100870bc2656a, type: 3}
 --- !u!1001 &752539922
@@ -5346,6 +5376,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1717769828}
+  - component: {fileID: 1717769829}
   m_Layer: 9
   m_Name: Road
   m_TagString: Untagged
@@ -5409,6 +5440,19 @@ Transform:
   m_Father: {fileID: 1385500138}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1717769829
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717769827}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 21.563105, y: 13.918396, z: 19.960876}
+  m_Center: {x: 2.421651, y: 6.459198, z: 166.2963}
 --- !u!1001 &1781996083
 PrefabInstance:
   m_ObjectHideFlags: 0
