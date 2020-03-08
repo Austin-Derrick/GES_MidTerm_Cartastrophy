@@ -13,6 +13,7 @@ public class MainMenu : MonoBehaviour
     }
     public void StartGame()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1;
         mainMenu.SetActive(false);
     }
