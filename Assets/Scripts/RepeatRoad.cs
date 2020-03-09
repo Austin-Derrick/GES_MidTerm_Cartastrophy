@@ -6,6 +6,9 @@ public class RepeatRoad : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        transform.position += new Vector3(0, 0, 150);
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            transform.position += new Vector3(0, 0, 150);
+        }
     }
 }
