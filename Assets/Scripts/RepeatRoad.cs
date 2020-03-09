@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class RepeatRoad : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnTriggerEnter(Collider other)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        transform.position += new Vector3(0, 0, 150);
     }
 }
