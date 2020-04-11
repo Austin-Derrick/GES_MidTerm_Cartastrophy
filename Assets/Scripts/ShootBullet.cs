@@ -9,6 +9,7 @@ public class ShootBullet : MonoBehaviour
     [SerializeField] GameObject firePosition;
     bool canFire = true;
     int firePower = 150;
+    public int ammo = 5;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +18,7 @@ public class ShootBullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (canFire && Input.GetMouseButtonDown(0))
+        if (canFire && Input.GetMouseButtonDown(0) && ammo > 0)
         {
             shootBullet();
         }
@@ -27,11 +28,12 @@ public class ShootBullet : MonoBehaviour
     {
         bulletPrefab = Instantiate(bulletPrefab, firePosition.transform.position, Quaternion.Euler(bulletPrefab.transform.rotation.x, 0, 0));
         bulletRb = bulletPrefab.GetComponent<Rigidbody>();
-        //float angle = -2.5f * Mathf.Deg2Rad;
-        //Vector3 shootDirection = Vector3.RotateTowards(transform.forward, Vector3.up, angle, 0);
-        bulletRb.AddForce(Vector3.forward * firePower, ForceMode.Impulse);
+        float angle = -2.5f * Mathf.Deg2Rad;
+        Vector3 shootDirection = Vector3.RotateTowards(transform.forward, firePosition.transform.forward, angle, 0);
+        bulletRb.AddForce(firePosition.transform.forward * firePower, ForceMode.Impulse);
         canFire = false;
         Invoke("fireBuffer", 1 / 5);
+        ammo--;
     }
 
     private void fireBuffer()
