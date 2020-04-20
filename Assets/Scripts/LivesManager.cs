@@ -25,7 +25,7 @@ public class LivesManager : MonoBehaviour
 
     private void DecrementHealth()
     {
-        lives -= 0.5f;
+        lives -= 1f;
     }
 
     public void UpdateText()

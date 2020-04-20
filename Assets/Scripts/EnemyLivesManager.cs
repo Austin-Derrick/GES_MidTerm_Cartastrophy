@@ -4,12 +4,8 @@ using UnityEngine;
 
 public class EnemyLivesManager : MonoBehaviour
 {
-    public int enemyLives;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private int enemyLives = 3;
+
     public void decrementLives()
     {
         enemyLives--;

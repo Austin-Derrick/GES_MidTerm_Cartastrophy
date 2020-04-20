@@ -4,24 +4,18 @@ using UnityEngine;
 
 public class BulletDetection : MonoBehaviour
 {
-    EnemyLivesManager enemyLivesManager;
-    // Start is called before the first frame update
-    void Start()
-    {
-        enemyLivesManager = GetComponent<EnemyLivesManager>();
-    }
+    [SerializeField] EnemyLivesManager enemyLivesManager;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        enemyLivesManager = GameObject.Find("Enemy").GetComponent<EnemyLivesManager>();
     }
-
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Bullet"))
+        if (other.gameObject.CompareTag("Enemy"))
         {
             enemyLivesManager.decrementLives();
+            Destroy(gameObject);
         }
     }
 }

@@ -12,10 +12,11 @@ public class RefillAmmo : MonoBehaviour
         AmmoManager = GameObject.FindGameObjectWithTag("Player").GetComponent<ShootBullet>();
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
+            Destroy(gameObject);
             AmmoManager.ammo += 3;
         }
     }
