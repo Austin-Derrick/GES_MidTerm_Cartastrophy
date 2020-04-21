@@ -11,10 +11,10 @@ public class AmmoTextManager : MonoBehaviour
     void Start()
     {
         playerAmmo = GameObject.FindGameObjectWithTag("Player").GetComponent<ShootBullet>();
+        UpdateText();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateText()
     {
         ammoText.text = $"Ammo: {playerAmmo.ammo}";
     }

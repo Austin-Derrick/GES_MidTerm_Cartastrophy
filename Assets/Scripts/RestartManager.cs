@@ -20,7 +20,7 @@ public class RestartManager : MonoBehaviour
 
     public void RestartLevel()
     {
-        //Time.timeScale = 1.0f;
-        SceneManager.LoadScene("FinishedPrototype_01");
+        Time.timeScale = 1.0f;
+        SceneManager.LoadScene("FinishedPrototype_02");
     }
 }

@@ -8,6 +8,7 @@ TagManager:
   - Bullet
   - Enemy
   - Buff
+  - SpawnManager
   layers:
   - Default
   - TransparentFX
