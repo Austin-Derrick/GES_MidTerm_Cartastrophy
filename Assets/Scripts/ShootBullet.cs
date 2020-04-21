@@ -33,7 +33,7 @@ public class ShootBullet : MonoBehaviour
         bulletRb = bulletClone.GetComponent<Rigidbody>();
         AddForce();
         canFire = false;
-        Invoke("fireBuffer", 1 / 5);
+        Invoke("fireBuffer", 1 / 4);
         ammo--;
         ammoTextManager.UpdateText();
     }
